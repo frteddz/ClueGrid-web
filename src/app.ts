@@ -1,4 +1,4 @@
-import { WORDS, getRandomWord } from './words';
+import { getRandomWord } from './words';
 
 interface Hint {
   letter: string;
@@ -153,10 +153,6 @@ function submitGuess() {
   const guess = currentGuess.trim().toUpperCase();
   if (guess.length !== 6) {
     setMessage('Word must be 6 letters');
-    return;
-  }
-  if (!WORDS.includes(guess)) {
-    setMessage('Not in word list');
     return;
   }
 
